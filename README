@@ -1,0 +1,17 @@
+epub2mobi.py
+
+Very simple script that looks for .epub files in a directory tree
+(by default starting in the current one, but you can specify it
+as the first argument in the command line), converts them to
+.mobi, and store them in the flat directory specified as the
+second argument in the command line, or 'kindle' by default.  It
+ignores files whose path includes any string present in the list
+ignore_if (currently not accessible from the command line).
+
+Requires ebook-convert, coming from calibre
+(http://calibre-ebook.com).  Go to Preferences, select
+Miscellaneous in Advanced, and click the "Install command line
+tools" button.
+
+Juan Reyero
+http://juanreyero.com
