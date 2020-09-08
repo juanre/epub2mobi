@@ -5,12 +5,12 @@ from functools import reduce
 
 
 def epub2mobi(fromdir, todir, ignore_if=None):
-    """Look for .epub files in fromdir, convert them to .mobi and store 
+    """Look for .epub files in fromdir, convert them to .mobi and store
     them in the flat directory todir unless their path includes any string
-    present in the list ignore_if. 
+    present in the list ignore_if.
 
-    Requires ebook-convert, coming from calibre (http://calibre-ebook.com). 
-    Go to Preferences, select Miscellaneous in Advanced, and click the 
+    Requires ebook-convert, coming from calibre (http://calibre-ebook.com).
+    Go to Preferences, select Miscellaneous in Advanced, and click the
     "Install command line tools" button.
     """
     if not os.path.exists(todir):
