@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import os
+from functools import reduce
+
 
 def epub2mobi(fromdir, todir, ignore_if=None):
     """Look for .epub files in fromdir, convert them to .mobi and store 
@@ -24,12 +26,15 @@ def epub2mobi(fromdir, todir, ignore_if=None):
                 if ext == '.epub':
                     mobi = os.path.join(todir, nm + '.mobi')
                     if not os.path.exists(mobi):
-                        os.system('ebook-convert ' + 
+                        os.system('ebook-convert ' +
                                   os.path.join(root, fl) + ' ' + mobi)
+
 
 if __name__ == '__main__':
     import sys
     fromdir, todir = '.', 'kindle'
-    if len(sys.argv) > 1:  fromdir = sys.argv[1]
-    if len(sys.argv) == 3: todir = sys.argv[2]
+    if len(sys.argv) > 1:
+        fromdir = sys.argv[1]
+    if len(sys.argv) == 3:
+        todir = sys.argv[2]
     epub2mobi(fromdir, todir, ignore_if=['ninios'])
