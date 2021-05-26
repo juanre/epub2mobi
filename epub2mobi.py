@@ -2,6 +2,7 @@
 
 import os
 from functools import reduce
+from subprocess import call
 
 
 def epub2mobi(fromdir, todir, ignore_if=None):
@@ -26,8 +27,7 @@ def epub2mobi(fromdir, todir, ignore_if=None):
                 if ext == '.epub':
                     mobi = os.path.join(todir, nm + '.mobi')
                     if not os.path.exists(mobi):
-                        os.system('ebook-convert ' +
-                                  os.path.join(root, fl) + ' ' + mobi)
+                        call(('ebook-convert', os.path.join(root, fl), mobi))
 
 
 if __name__ == '__main__':
